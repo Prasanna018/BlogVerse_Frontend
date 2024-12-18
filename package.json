@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://blogverse-backend-x00f.onrender.com ",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
