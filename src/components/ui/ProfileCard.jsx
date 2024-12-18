@@ -13,6 +13,7 @@ import useAuthUser from '../../hook/useAuthUser';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { BaseUrl } from '../../common/common';
 
 const ProfileCard = ({ onClose }) => {
   const navigate = useNavigate()
@@ -21,7 +22,7 @@ const ProfileCard = ({ onClose }) => {
   const handleLogout = async () => {
     console.log('logout');
     try {
-      const response = await axios.get('http://localhost:2222/auth/logout', {
+      const response = await axios.get(`${BaseUrl}/auth/logout`, {
         withCredentials: true
       })
       if (response.data.success) {
