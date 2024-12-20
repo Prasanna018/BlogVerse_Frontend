@@ -52,13 +52,13 @@ const appRouter = createBrowserRouter([
 // import CardList from './components/Post/CardList';
 function App() {
   return (
-    <Router basename='/auth'>
-      <RouterProvider router={appRouter}>
+
+    <RouterProvider router={appRouter}>
 
 
-      </RouterProvider>
+    </RouterProvider>
 
-    </Router>
+
 
 
   );
