@@ -22,7 +22,7 @@ const Navbar = () => {
   const navItems = [
     { href: `${Auth ? '/create-post' : '/login'}`, icon: PenSquare, label: 'Create Blog' },
 
-    !Auth ? { href: 'auth/login', icon: LogIn, label: 'Login' } : "",
+    !Auth ? { href: '/login', icon: LogIn, label: 'Login' } : "",
     !Auth ? { href: '/signup', icon: UserPlus, label: 'Sign Up' } : ""
 
   ];
