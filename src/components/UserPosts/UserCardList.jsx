@@ -19,9 +19,9 @@ const UserCardList = () => {
     const { userPosts } = useGetUserPosts()
 
     console.log(userPosts)
-    if (userPosts.length === 0) {
-        return
-    }
+    // if (userPosts.length === 0) {
+    //     return
+    // }
 
     return (
 
@@ -38,21 +38,29 @@ const UserCardList = () => {
                 initial="hidden"
                 animate="show"
             >
-                {userPosts.map((post, index) => (
-                    <motion.div
-                        key={post._id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                    >
-                        <PostCard
-                            id={post._id}
-                            title={post.title}
-                            description={post.content}
-                            imageUrl={post.coverImageUrl}
-                        />
-                    </motion.div>
-                ))}
+                {
+                    userPosts.length === 0 ? (<div>No Posts</div>) : (
+
+
+                        userPosts.map((post, index) => (
+                            <motion.div
+                                key={post._id}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                            >
+                                <PostCard
+                                    id={post._id}
+                                    title={post.title}
+                                    description={post.content}
+                                    imageUrl={post.coverImageUrl}
+                                    autherId={post.autherId}
+                                />
+                            </motion.div>
+                        ))
+
+                    )
+                }
             </motion.div>
         </div>
     );

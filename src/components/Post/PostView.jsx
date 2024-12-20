@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import useGetPosts from '../../hook/useGetPosts';
+import { Pencil } from 'lucide-react';
+
 
 const PostView = () => {
     const { posts } = useGetPosts()
@@ -68,6 +70,7 @@ const PostView = () => {
                     </div>
                 </motion.div>
             </div>
+
         </motion.div>)
 
     );

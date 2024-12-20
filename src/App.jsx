@@ -12,6 +12,7 @@ import PostView from './components/Post/PostView';
 import UserCardList from './components/UserPosts/UserCardList';
 import ProfilePage from './Pages/ProfilePage/ProfilePage';
 import MainProfilePage from './Pages/ProfilePage/MainProfilePage';
+import MainEditPage from './EditPost/MainEditPage';
 
 const appRouter = createBrowserRouter([
   {
@@ -42,6 +43,9 @@ const appRouter = createBrowserRouter([
   {
     path: '/user-profile',
     element: <MainProfilePage></MainProfilePage>
+  }, {
+    path: '/edit-post/:id',
+    element: <MainEditPage></MainEditPage>
   }
 
 ])
@@ -49,6 +53,7 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <RouterProvider router={appRouter}>
+      <Toaster></Toaster>
 
     </RouterProvider>
 
